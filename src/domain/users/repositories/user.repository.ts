@@ -7,7 +7,7 @@ export interface ICreateUser {
 }
 
 export abstract class IUserRepository {
-  abstract create({ name, email, password }: ICreateUser): Promise<UserEntity>
+  abstract save({ name, email, password }: ICreateUser): Promise<UserEntity>
   abstract findById({ id }: { id: string }): Promise<UserEntity>
   abstract findByEmail({ email }: { email: string }): Promise<UserEntity>
 }

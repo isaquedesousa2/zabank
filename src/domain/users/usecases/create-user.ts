@@ -30,7 +30,7 @@ export class CreateUserUseCase {
 
     const passwordHashed = await this.hasher.hash(password)
 
-    const user = await this.useRepository.create({
+    const user = await this.useRepository.save({
       name,
       email,
       password: passwordHashed,
